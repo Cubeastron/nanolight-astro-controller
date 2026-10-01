@@ -110,3 +110,9 @@ SysTick 每 1 ms 调用 `Key_Tick()`，实际按键 GPIO 每 20 ms 采样一次�
 - `EEPROM_Save()` 会擦除并重写整页，UI 当前未检查其返回值，界面提示不等同于 Flash 写入已被硬件确认。
 - `Error_Handler()` 会关闭 `FOCUS`/`SHUTTER` 输出并关闭全局中断，但不会自动拉高 `EN` 禁用电机驱动器。
 - `EEPROM_IsValid()`、`focuser_position`、`extime_fc` 等符号目前是遗留接口或调试变量，不构成独立用户功能；`focuser_ui.h` 中声明的 `fun_c23()` 在当前实现中也没有对应函数体和菜单表项。
+
+## 许可证
+
+本项目自有代码采用 GNU GPL v3.0 发布，详见根目录 [LICENSE](LICENSE)。
+
+STM32 HAL、CMSIS 和 STM32 USB Device Library 等第三方组件仍按照各自目录中的许可证发布；这些组件的原版权声明和许可证文件必须保留。
