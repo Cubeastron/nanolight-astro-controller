@@ -1,0 +1,20 @@
+# CMake/构建输出
+build/
+
+# CLion/JetBrains 本机配置
+.idea/
+
+# 固件和链接器生成文件
+*.elf
+*.hex
+*.map
+
+# 编译中间文件
+*.o
+*.obj
+*.pdb
+*.ncb
+*.suo
+
+# 不纳入 NanoLight 公开固件仓库的 RoboFocus 驱动源码
+RoboFocus Driver/
