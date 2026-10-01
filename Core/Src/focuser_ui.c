@@ -685,7 +685,10 @@ void fun_a41(void) {
     OLED_PrintString(0, thrline - 12, "间隔剩余", &font15x15, OLED_COLOR_NORMAL);
     OLED_PrintString(0, fline - 12, "张数剩余", &font15x15, OLED_COLOR_NORMAL);
 
-    OLED_PrintString(34, oneline - 12, N_S[Get_Dir_State()], &font15x15, OLED_COLOR_NORMAL);
+    /* 延时摄影页面使用“顺/逆”表示方向；赤道仪页面仍使用“南/北”。 */
+    OLED_PrintString(34, oneline - 12,
+                     Get_Dir_State() ? "逆" : "顺",
+                     &font15x15, OLED_COLOR_NORMAL);
     OLED_PrintString(86, oneline - 12, EQ_speedtab_UI[speedtabi], &font15x15, OLED_COLOR_NORMAL);
     snprintf(buf, sizeof(buf), "%d", Ex_time);
     OLED_PrintString(64, twoline - 12, buf, &font15x15, OLED_COLOR_NORMAL);
